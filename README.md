@@ -328,20 +328,6 @@ These are the exact columns used in the record filter query. Indexes were added 
 
 ---
 
-## Testing
-
-40 unit tests covering all core business logic — no database or network required (pure Mockito mocks).
-
-| Test Class                    | Tests | Coverage                                          |
-|-------------------------------|-------|---------------------------------------------------|
-| UserServiceTest               |  11   | Create, get, update, deactivate — edge cases      |
-| FinancialRecordServiceTest    |  10   | CRUD, filtering, null-field update safety         |
-| DashBoardServiceTest          |   7   | Net balance, category totals, monthly grouping    |
-| AuthServiceTest               |   3   | Login success, bad credentials, token generation  |
-| GlobalExceptionHandlerTest    |   9   | HTTP 400 / 401 / 403 / 404 / 409 / 500 responses  |
-
----
-
 ## GitHub
 
 🔗 [Repository Link](_your_github_url_here_)
