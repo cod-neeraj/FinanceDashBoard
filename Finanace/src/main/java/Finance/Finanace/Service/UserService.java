@@ -7,20 +7,15 @@ import Finance.Finanace.Exceptions.DuplicateResourceException;
 import Finance.Finanace.Exceptions.InvalidOperationException;
 import Finance.Finanace.Exceptions.UserNotFoundException;
 import Finance.Finanace.Mapper.UserMapper;
-import Finance.Finanace.Models.Enums.Role;
 import Finance.Finanace.Models.Enums.UserStatus;
 import Finance.Finanace.Models.User;
 import Finance.Finanace.Repository.UserRepo;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

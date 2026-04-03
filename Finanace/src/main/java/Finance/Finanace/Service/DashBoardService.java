@@ -2,12 +2,10 @@ package Finance.Finanace.Service;
 
 import Finance.Finanace.DTO.Response.DashBoardSummaryResponse;
 import Finance.Finanace.DTO.Response.FinancialRecordResponse;
-import Finance.Finanace.Mapper.FinancialRecordMapper;
 import Finance.Finanace.Models.Enums.TransactionType;
 import Finance.Finanace.Repository.FinanceRecordRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -28,7 +26,7 @@ import java.util.Map;
 public class DashBoardService {
 
     private final FinanceRecordRepository recordRepository;
-    private final FinancialRecordMapper financialRecordMapper;
+
 
     @PreAuthorize("hasAnyRole('VIEWER', 'ANALYST', 'ADMIN')")
     @Transactional(readOnly = true)

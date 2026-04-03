@@ -28,18 +28,13 @@ This is the backend for a **Finance Dashboard System** where users interact with
 
 ## Tech Stack
 
-| Layer         | Technology                          |
-|---------------|-------------------------------------|
-| Language      | Java 21                             |
-| Framework     | Spring Boot 4.0                     |
-| Security      | Spring Security + JWT (jjwt 0.12.6) |
-| Database      | PostgreSQL                          |
-| Caching       | Redis                               |
-| ORM           | Spring Data JPA / Hibernate         |
-| Mapping       | MapStruct                           |
-| Validation    | Jakarta Validation                  |
-| Build Tool    | Maven                               |
-| Boilerplate   | Lombok                              |
+| Layer         | Technology            |
+|---------------|-----------------------|
+| Language      | Java 21               |
+| Framework     | Spring Boot 4.0       |
+| Security      | Spring Security + JWT |
+| Database      | PostgreSQL            |
+| Caching       | Redis                 |
 
 ---
 
@@ -275,6 +270,8 @@ spring.datasource.password=your_postgres_password
 spring.redis.host=localhost
 spring.redis.port=6379
 spring.redis.password=your_redis_password
+
+app.jwt.secret=your_jwt_secret_key
 ```
 
 > **Note:** For production, these should be injected via environment variables, not hardcoded.
@@ -298,13 +295,6 @@ Password : admin123
 
 Use these to log in at `POST /api/auth/login` and get your JWT token.
 
-### 6. Run tests
-
-```bash
-mvn test
-```
-
----
 
 ## Technical Decisions & Trade-offs
 

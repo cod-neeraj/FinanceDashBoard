@@ -7,15 +7,12 @@ import Finance.Finanace.DTO.Response.FinancialRecordResponse;
 import Finance.Finanace.Exceptions.RecordNotFoundException;
 import Finance.Finanace.Exceptions.UserNotFoundException;
 import Finance.Finanace.Mapper.FinancialRecordMapper;
-import Finance.Finanace.Mapper.UserMapper;
 import Finance.Finanace.Models.FinancialRecord;
 import Finance.Finanace.Models.User;
 import Finance.Finanace.Repository.FinanceRecordRepository;
 import Finance.Finanace.Repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.Response;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,17 +22,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class FinancialRecordService {
 
     private final FinanceRecordRepository recordRepository;
-
     private final UserRepo userRepository;
-    private final UserMapper userMapper;
     private final FinancialRecordMapper financialRecordMapper;
 
     @PreAuthorize("hasAnyRole('ADMIN')")
