@@ -318,16 +318,6 @@ These are the exact columns used in the record filter query. Indexes were added 
 
 ---
 
-## Known Limitations
-
-- **Credentials in `application.properties`** — DB password, JWT secret, and Redis password are present in the config file for local evaluation. In a real deployment, these would be injected via environment variables or a secrets manager.
-- **`spring.security.debug=true`** — enabled for development visibility. Must be turned off in production.
-- **No token blacklisting** — once a JWT is issued it is valid until expiry. A logout endpoint with Redis-based blocklist would be the next step.
-- **No soft delete** — record deletion is permanent. An `isDeleted` flag with filtered queries would be the production approach.
-- **Project name typo** — the artifact and package are named `Finanace` (double 'a') — carried from initial setup and retained to avoid breaking import paths.
-
----
-
 ## GitHub
 
 🔗 [Repository Link](_your_github_url_here_)
